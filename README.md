@@ -128,28 +128,35 @@ Both `email` and `phoneNumber` are optional because sometimes we only know one o
 
 ## Postman Screenshots
 
-### New contact creation (Case 1)
+### Brand new customer (Case 1)
 
-<!-- Paste your screenshot here -->
+<img width="650" height="400" alt="image" src="https://github.com/user-attachments/assets/9d3a26b2-fde8-4d79-b27d-6998f1447d3d" />
 
+- This creates a new contact since nothing exists yet.
 ---
 
-### Existing contact lookup (Case 2)
+### Same info, existing customer (Case 2)
+<img width="793" height="400" alt="image" src="https://github.com/user-attachments/assets/b4e00a85-333b-4ff1-a0dd-215c55b574f5" />
 
-<!-- Paste your screenshot here -->
-
+- Same request as above this time it just returns the consolidated data, no new contact created.
 ---
 
 ### Two groups merging (Case 3)
+- First, create a second separate contact:
+<img width="791" height="567" alt="image" src="https://github.com/user-attachments/assets/b9ae33b2-83b0-4885-a382-19596e2ffbc9" />
 
-<!-- Paste your screenshot here -->
+- Then fire the merge trigger, one piece from each group:
+- This links both groups together. The older contact stays primary, the newer one gets demoted to secondary.
+
+<img width="808" height="627" alt="image" src="https://github.com/user-attachments/assets/5c916cdb-960f-4838-957d-cc9df7334f8f" />
 
 ---
 
 ### New info added to existing contact (Case 4)
 
-<!-- Paste your screenshot here -->
+<img width="793" height="614" alt="image" src="https://github.com/user-attachments/assets/35938d09-5916-42a0-9b3c-3a6ef2a8ead9" />
 
+- Same email, new phone number. A secondary contact gets created linked to the primary.
 ---
 
 Thank youu 
