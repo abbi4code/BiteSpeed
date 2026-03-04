@@ -11,6 +11,8 @@ I recorded a quick walkthrough where I explain my approach, go through the cases
 [Watch here](https://youtu.be/8ObqCRrRp9Q)
 
 ---
+<img width="1272" height="750" alt="image" src="https://github.com/user-attachments/assets/8fea884e-787d-4b73-9b5c-762a55e835ab" />
+
 
 ## Problem Statement
 
