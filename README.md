@@ -4,6 +4,14 @@ This is my submission for the Bitespeed Backend Task. The goal was to build a si
 
 ---
 
+## Video Walkthrough
+
+I recorded a quick walkthrough where I explain my approach, go through the cases, and demo the API live.
+
+[Watch here](https://youtu.be/8ObqCRrRp9Q)
+
+---
+
 ## Problem Statement
 
 So basically the idea is — a customer might place multiple orders using different emails or phone numbers, but they're still the same person. We need to link all of those together and always return a consolidated view.
