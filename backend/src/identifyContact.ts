@@ -29,10 +29,12 @@ export async function findOrCreateContact(email?: string, phoneNumber?: string){
         });
 
         return {
-            primaryContactId: newContact.id,
-            emails: newContact.email ? [newContact.email] : [],
-            phoneNumbers: newContact.phoneNumber ? [newContact.phoneNumber] : [],
-            secondaryContactIds: []
+            contact: {
+                primaryContactId: newContact.id,
+                emails: newContact.email ? [newContact.email] : [],
+                phoneNumbers: newContact.phoneNumber ? [newContact.phoneNumber] : [],
+                secondaryContactIds: []
+            }
         }
     }
 
@@ -76,12 +78,12 @@ export async function findOrCreateContact(email?: string, phoneNumber?: string){
             }
         })
 
-        // we have to update those secondary contacts that were pointing to newer primary
+        // re-point any existing secondaries of the newer primaries to the oldest primary
         await prisma.contact.updateMany({
-            where: {id: {
-                in: newerPrimaryIds
-            }},
-            data:{
+            where: {
+                linkedId: { in: newerPrimaryIds }
+            },
+            data: {
                 linkedId: oldestPrimaryContact.id
             }
         })
@@ -112,8 +114,14 @@ export async function findOrCreateContact(email?: string, phoneNumber?: string){
     const allPhoneNo = [...new Set(finalContactList.map(c => c.phoneNumber).filter(Boolean))]
 
     const secondaryContactIds = finalContactList.map(c => c.id).filter( id => id !== oldestPrimaryContact.id)
-    const formattedEmails = [oldestPrimaryContact.email, ...allEmails.filter(email => email !== oldestPrimaryContact.email).filter(Boolean)]
-    const formattedPhoneNos = [oldestPrimaryContact.phoneNumber, ...allPhoneNo.filter(phno => phno !== oldestPrimaryContact.phoneNumber).filter(Boolean)]
+    const formattedEmails = [
+        ...(oldestPrimaryContact.email ? [oldestPrimaryContact.email] : []),
+        ...allEmails.filter(e => e !== oldestPrimaryContact.email).filter(Boolean)
+    ]
+    const formattedPhoneNos = [
+        ...(oldestPrimaryContact.phoneNumber ? [oldestPrimaryContact.phoneNumber] : []),
+        ...allPhoneNo.filter(p => p !== oldestPrimaryContact.phoneNumber).filter(Boolean)
+    ]
 
     return {
         contact: {
