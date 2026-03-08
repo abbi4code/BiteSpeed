@@ -140,7 +140,8 @@ Both `email` and `phoneNumber` are optional because sometimes we only know one o
 
 ### Brand new customer (Case 1)
 
-<img width="650" height="400" alt="image" src="https://github.com/user-attachments/assets/9d3a26b2-fde8-4d79-b27d-6998f1447d3d" />
+<!-- <img width="650" height="400" alt="image" src="https://github.com/user-attachments/assets/9d3a26b2-fde8-4d79-b27d-6998f1447d3d" /> -->
+<img width="650" height="400" alt="image" src="https://github.com/user-attachments/assets/9be30ccf-f3dd-476d-b526-fc015a7ecbbd" />
 
 - This creates a new contact since nothing exists yet.
 ---
