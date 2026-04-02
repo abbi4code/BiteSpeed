@@ -1,6 +1,6 @@
-# Bitespeed Identity Reconciliation — Backend Assignment
+# Identity Reconciliation
 
-This is my submission for the Bitespeed Backend Task. The goal was to build a single API endpoint `/identify` that can figure out if a customer contacting us is someone we already know, even if they use a different email or phone number than before.
+The goal was to build a single API endpoint `/identify` that can figure out if a customer contacting us is someone we already know, even if they use a different email or phone number than before.
 
 ---
 
